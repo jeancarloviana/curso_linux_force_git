@@ -193,7 +193,7 @@ root@interno:~#
 ```
 > voce pode usar o comando grep para filtrar o comando history | grep w*
 
-´´´
+```
 root@interno:~# history | grep apt*  
    21  apt search kernel  
    22  apt search kernel |grep header  
@@ -204,7 +204,7 @@ root@interno:~# history | grep apt*
    32  apt install ./google-chrome-stable_current_amd64.deb   
    37  apt update  
 root@interno:~#   
-´´´
+```
 
 > após localizar o arquivo voce pode dar o comando ! + o numero do comando no history para refazer o comando
 
