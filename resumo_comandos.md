@@ -12,6 +12,13 @@ jeancviana@DESKTOP-6SOQARG:~$ pwd
 
 ### Verificar informações do usuario:
 
+> who - info dos users autenticados
+
+```
+root@interno:/tmp# who
+analista tty7         2023-01-09 20:43 (:0)
+```
+
 >whoami - mostra o user logado
 
 ```
@@ -19,14 +26,12 @@ jeancviana@DESKTOP-6SOQARG:~$ whoami
 jeancviana
 ```
 
-### Verificar informações do usuario:
-
 > id - verificar os grupos que o usuario faz parte
 
 ```
-jeancviana@DESKTOP-6SOQARG:~$ id  
-uid=1000(jeancviana) gid=1000(jeancviana) grupos=1000	(jeancviana),4	(adm),24(cdrom),27(sudo),30(dip),46	(plugdev),119(lxd)  
-jeancviana@DESKTOP-6SOQARG:~$  
+root@interno:~# id
+uid=0(root) gid=0(root) grupos=0(root)
+root@interno:~# 
 ```
 
 ### Tipos de usuarios:
@@ -143,14 +148,13 @@ analista@debian:~$
 
 > touch : cria arquivo em branco  
 > touch arquivo1: cria o arquivo em branco arquivo1 podem sem criados varios arquivos em sequencia touch arquivo1 touch arquivo2   
-> touch doc0{1..5}.txt para criar arquivos em sequênciacd ..  
+> touch doc0{1..5}.txt para criar arquivos em sequência.  
 
 ### Apagando diretório e arquivos:
 
 > rm - apaga arquivos  
 > rm -rf : -r forma recursiva para apagar arquivos, -f força apagar sem pedir permissão (sem chance de salvação)  
 > rm -rfd : -d apaga o diretório (sem chance de salvação)  
-> 
 > rmdir: apaga diretório mas tem que estar vazio  
 
 ### Comando de cópia:
@@ -160,3 +164,87 @@ analista@debian:~$
 ```
 cp -rp /var/log/   /tmp/
 ```
+
+### Comando History:
+
+> history: comando para visualizar histórico de comandos executados no terminal
+
+```
+root@interno:~# history
+    1  cd /mnt/
+    2  ls
+    3  cd ..
+```
+> voce pode informar o numero de linhas que quer ver no history como ocomando history + quantidade de linhas
+
+```
+root@interno:~# history 10
+   68  who -a
+   69  clear
+   70  id
+   71  clear
+   72  histroy
+   73  history
+   74  history 71
+   75  history --help
+   76  man history
+   77  history 10
+root@interno:~# 
+```
+> voce pode usar o comando grep para filtrar o comando history | grep w*
+
+´´´
+root@interno:~# history | grep apt*
+   21  apt search kernel
+   22  apt search kernel |grep header
+   23  apt install linux-headers
+   24  apt install linux-headers-`uname -r`
+   30  apt install ./google-chrome-stable_current_amd64.deb 
+   31  apt --fix-broken install
+   32  apt install ./google-chrome-stable_current_amd64.deb 
+   37  apt update
+root@interno:~# 
+´´´
+
+> após localizar o arquivo voce pode dar o comando ! + o numero do comando no history para refazer o comando
+
+```
+root@interno:~# !62
+apt-get autoremove
+Lendo listas de pacotes... Pronto
+Construindo árvore de dependências... Pronto
+Lendo informação de estado... Pronto        
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 0 não atualizados.
+root@interno:~# 
+```
+
+> verificar quantidades de linhas máximo no history
+
+```
+root@interno:~# echo $HISTSIZE
+500
+```
+
+> limpar o history -c
+
+```
+root@interno:~# history -c
+root@interno:~# history
+    1  history
+root@interno:~# 
+```
+
+### Comando para limpar tela do terminal
+
+> clear
+
+´´´
+root@interno:~# clear^C
+root@interno:~# 
+```
+
+
+
+
+
+
