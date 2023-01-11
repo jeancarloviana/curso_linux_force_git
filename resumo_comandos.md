@@ -238,7 +238,7 @@ root@interno:~#
 
 > clear
 
-´´´
+```
 root@interno:~# clear^C
 root@interno:~# 
 ```
