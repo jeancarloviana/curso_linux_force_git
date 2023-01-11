@@ -1,6 +1,6 @@
 <div align="center">
 
-![](imagens/linux_force_capa.png)
+![](https://github.com/jeancarloviana/curso_linux_force_git/blob/master/linux_force_capa.png)
 
 </div> 
 
