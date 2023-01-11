@@ -150,6 +150,7 @@ analista@debian:~$
 > rm - apaga arquivos  
 > rm -rf : -r forma recursiva para apagar arquivos, -f força apagar sem pedir permissão (sem chance de salvação)  
 > rm -rfd : -d apaga o diretório (sem chance de salvação)  
+> 
 > rmdir: apaga diretório mas tem que estar vazio  
 
 ### Comando de cópia:
