@@ -1,6 +1,6 @@
 <div align="center">
 
-![](Imagem/cabecalho.JPG)
+![](imagens/linux_force_capa.png)
 
 </div> 
 
