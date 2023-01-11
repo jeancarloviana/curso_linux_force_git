@@ -1,0 +1,133 @@
+root@DESKTOP-6SOQARG:~# mkdir -p /var/backup/conf
+root@DESKTOP-6SOQARG:~# cd /var/backup/conf
+root@DESKTOP-6SOQARG:/var/backup/conf# cd ..
+root@DESKTOP-6SOQARG:/var/backup# cd ..
+root@DESKTOP-6SOQARG:/var# ls
+backup  backups  cache  crash  lib  local  lock  log  mail  metrics  opt  run  snap  spool  tmp
+root@DESKTOP-6SOQARG:/var#
+root@DESKTOP-6SOQARG:/var#
+root@DESKTOP-6SOQARG:/var#
+root@DESKTOP-6SOQARG:/var#
+root@DESKTOP-6SOQARG:/var# cp -p /etc/*.conf /var/backup/conf
+root@DESKTOP-6SOQARG:/var# cd /var/backup/conf
+root@DESKTOP-6SOQARG:/var/backup/conf# ls
+adduser.conf          e2scrub.conf     kerneloops.conf  nftables.conf           rsyslog.conf       updatedb.conf
+apg.conf              fprintd.conf     ld.so.conf       nsswitch.conf           rygel.conf         usb_modeswitch.conf
+appstream.conf        fuse.conf        libao.conf       overlayroot.conf        sensors3.conf      wsl.conf
+brltty.conf           gai.conf         libaudit.conf    overlayroot.local.conf  sudo.conf          xattr.conf
+ca-certificates.conf  hdparm.conf      logrotate.conf   pam.conf                sudo_logsrvd.conf
+debconf.conf          host.conf        mke2fs.conf      pnm2ppa.conf            sysctl.conf
+deluser.conf          kernel-img.conf  multipath.conf   resolv.conf             ucf.conf
+root@DESKTOP-6SOQARG:/var/backup/conf# man touch
+root@DESKTOP-6SOQARG:/var/backup/conf# cd /
+root@DESKTOP-6SOQARG:/# ls
+bin   dev  home  lib    lib64   lost+found  mnt  proc  run   snap  sys  usr
+boot  etc  init  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+root@DESKTOP-6SOQARG:/# cd etc
+root@DESKTOP-6SOQARG:/etc# ls
+acpi                    dpkg             landscape            opt                     shells
+adduser.conf            e2scrub.conf     ldap                 os-release              skel
+aliases                 ec2_version      ld.so.cache          overlayroot.conf        snmp
+aliases.db              emacs            ld.so.conf           overlayroot.local.conf  sos
+alsa                    environment      ld.so.conf.d         PackageKit              speech-dispatcher
+alternatives            environment.d    legal                pam.conf                ssh
+anacrontab              ethertypes       libao.conf           pam.d                   ssl
+apg.conf                firefox          libaudit.conf        papersize               sssd
+apm                     fonts            libblockdev          passwd                  subgid
+apparmor                fprintd.conf     libnl-3              passwd-                 subgid-
+apparmor.d              fstab            libpaper.d           pcmcia                  subuid
+apport                  fuse.conf        libreoffice          perl                    subuid-
+appstream.conf          fwupd            locale.alias         pki                     sudo.conf
+apt                     gai.conf         locale.gen           pm                      sudoers
+avahi                   gdb              localtime            pnm2ppa.conf            sudoers.d
+bash.bashrc             gdm3             logcheck             polkit-1                sudo_logsrvd.conf
+bash_completion         geoclue          login.defs           pollinate               sysctl.conf
+bash_completion.d       ghostscript      logrotate.conf       postfix                 sysctl.d
+bindresvport.blacklist  glvnd            logrotate.d          ppp                     systemd
+binfmt.d                gnome            lsb-release          profile                 terminfo
+bluetooth               groff            lvm                  profile.d               thunderbird
+brlapi.key              group            machine-id           protocols               timezone
+brltty                  group-           magic                pulse                   tmpfiles.d
+brltty.conf             grub.d           magic.mime           python3                 ubuntu-advantage
+byobu                   gshadow          mailcap              python3.10              ucf.conf
+ca-certificates         gshadow-         mailcap.order        rc0.d                   udev
+ca-certificates.conf    gss              mailname             rc1.d                   udisks2
+chatscripts             gtk-2.0          manpath.config       rc2.d                   ufw
+cloud                   gtk-3.0          mdadm                rc3.d                   updatedb.conf
+console-setup           hdparm.conf      mime.types           rc4.d                   update-manager
+cracklib                host.conf        mke2fs.conf          rc5.d                   update-motd.d
+cron.d                  hostname         ModemManager         rc6.d                   update-notifier
+cron.daily              hosts            modprobe.d           rcS.d                   UPower
+cron.hourly             hosts.allow      modules              resolv.conf             usb_modeswitch.conf
+cron.monthly            hosts.deny       modules-load.d       resolvconf              usb_modeswitch.d
+crontab                 hp               mtab                 rmt                     vim
+cron.weekly             ifplugd          multipath.conf       rpc                     vmware-tools
+cryptsetup-initramfs    init             mysql                rsyslog.conf            vtrgb
+crypttab                init.d           nanorc               rsyslog.d               vulkan
+cups                    initramfs-tools  needrestart          rygel.conf              wgetrc
+cupshelpers             inputrc          netconfig            sane.d                  wpa_supplicant
+dbus-1                  insserv.conf.d   netplan              screenrc                wsl.conf
+dconf                   ipp-usb          network              security                X11
+debconf.conf            iproute2         networkd-dispatcher  selinux                 xattr.conf
+debian_version          iscsi            NetworkManager       sensors3.conf           xdg
+default                 issue            networks             sensors.d               xml
+deluser.conf            issue.net        newt                 services                zsh_command_not_found
+depmod.d                kernel           nftables.conf        sgml
+dhcp                    kernel-img.conf  nsswitch.conf        shadow
+dictionaries-common     kerneloops.conf  openvpn              shadow-
+root@DESKTOP-6SOQARG:/etc# cd /
+root@DESKTOP-6SOQARG:/# ls
+bin   dev  home  lib    lib64   lost+found  mnt  proc  run   snap  sys  usr
+boot  etc  init  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+root@DESKTOP-6SOQARG:/# cd /tmp
+root@DESKTOP-6SOQARG:/tmp# ls
+bash-fc.H0DWFV.save
+root@DESKTOP-6SOQARG:/tmp# touch .arquivo01.txt .arquivo02.txt
+root@DESKTOP-6SOQARG:/tmp# ls
+bash-fc.H0DWFV.save
+root@DESKTOP-6SOQARG:/tmp# ls -lha
+total 16K
+drwxrwxrwt  3 root root 4,0K jan 10 03:39 .
+drwxr-xr-x 19 root root 4,0K jan 10 03:34 ..
+-rw-r--r--  1 root root    0 jan 10 03:39 .arquivo01.txt
+-rw-r--r--  1 root root    0 jan 10 03:39 .arquivo02.txt
+-rw-------  1 root root  941 nov 20 18:57 bash-fc.H0DWFV.save
+drwxrwxrwt  2 root root 4,0K out 31 00:23 .X11-unix
+root@DESKTOP-6SOQARG:/tmp# mkdir arquivos
+root@DESKTOP-6SOQARG:/tmp# ls -lha
+total 20K
+drwxrwxrwt  4 root root 4,0K jan 10 03:39 .
+drwxr-xr-x 19 root root 4,0K jan 10 03:34 ..
+-rw-r--r--  1 root root    0 jan 10 03:39 .arquivo01.txt
+-rw-r--r--  1 root root    0 jan 10 03:39 .arquivo02.txt
+drwxr-xr-x  2 root root 4,0K jan 10 03:39 arquivos
+-rw-------  1 root root  941 nov 20 18:57 bash-fc.H0DWFV.save
+drwxrwxrwt  2 root root 4,0K out 31 00:23 .X11-unix
+root@DESKTOP-6SOQARG:/tmp# mv .arquivos* /tmp/arquivos
+mv: impossível obter informação para '.arquivos*': Ficheiro ou pasta inexistente
+root@DESKTOP-6SOQARG:/tmp# mv .arquivos* /arquivos
+mv: impossível obter informação para '.arquivos*': Ficheiro ou pasta inexistente
+root@DESKTOP-6SOQARG:/tmp# mv .arquivo* /arquivos
+mv: o destino '/arquivos' não é uma pasta
+root@DESKTOP-6SOQARG:/tmp# mv .arquivo* /tmp/arquivos
+root@DESKTOP-6SOQARG:/tmp# ls
+arquivos  bash-fc.H0DWFV.save
+root@DESKTOP-6SOQARG:/tmp# ls -lha
+total 20K
+drwxrwxrwt  4 root root 4,0K jan 10 03:40 .
+drwxr-xr-x 19 root root 4,0K jan 10 03:34 ..
+drwxr-xr-x  2 root root 4,0K jan 10 03:40 arquivos
+-rw-------  1 root root  941 nov 20 18:57 bash-fc.H0DWFV.save
+drwxrwxrwt  2 root root 4,0K out 31 00:23 .X11-unix
+root@DESKTOP-6SOQARG:/tmp# cd arquivos/
+root@DESKTOP-6SOQARG:/tmp/arquivos# ls -lha
+total 8,0K
+drwxr-xr-x 2 root root 4,0K jan 10 03:40 .
+drwxrwxrwt 4 root root 4,0K jan 10 03:40 ..
+-rw-r--r-- 1 root root    0 jan 10 03:39 .arquivo01.txt
+-rw-r--r-- 1 root root    0 jan 10 03:39 .arquivo02.txt
+root@DESKTOP-6SOQARG:/tmp/arquivos# cd ..
+root@DESKTOP-6SOQARG:/tmp# rm -rfd arquivos
+root@DESKTOP-6SOQARG:/tmp# ls
+bash-fc.H0DWFV.save
+root@DESKTOP-6SOQARG:/tmp#
