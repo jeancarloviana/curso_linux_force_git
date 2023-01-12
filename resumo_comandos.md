@@ -34,10 +34,22 @@ uid=0(root) gid=0(root) grupos=0(root)
 root@interno:~# 
 ```
 
+> w : exibe informações sobre os usuários atualmente na máquina e seus processos . O cabeçalho da saída mostra (nesta ordem): a hora atual, há quanto tempo o sistema está em execução, quantos usuários estão conectados no momento e a média de carga do sistema nos últimos 1, 5 e 15 minutos  
+
+```
+root@interno:/tmp# w
+ 20:07:59 up  3:23,  1 user,  load average: 0,05, 0,04, 0,00
+USUARIO  TTY     DE               LOGIN@   OCIOSO JCPU   PCPU O QUE
+analista tty7     :0               seg20   47:25m 43.82s  0.27s xfce4-session
+```
+
+> :0 - indica que o user logou no ambiente grafico  
+> tty7 - numero da sessão do terminal  
+
 ### Tipos de usuarios:
 
->usuario comum: poucos privilégios  
->usuario root: usuario adm do sistema  
+> usuario comum: poucos privilégios  
+> usuario root: usuario adm do sistema  
 
 ### Comando su:
 
@@ -157,14 +169,6 @@ analista@debian:~$
 > rm -rfd : -d apaga o diretório (sem chance de salvação)  
 > rmdir: apaga diretório mas tem que estar vazio  
 
-### Comando de cópia:
-
-> cp arquivo ou diretório a copiar + caminho do diretório de destino  
-
-```
-cp -rp /var/log/   /tmp/
-```
-
 ### Comando History:
 
 > history: comando para visualizar histórico de comandos executados no terminal
@@ -225,6 +229,13 @@ root@interno:~# echo $HISTSIZE
 500
 ```
 
+> echo $HISTFILE mostra o caminho do arquivo do history  
+
+```
+root@interno:/# echo $HISTFILE
+/root/.bash_history
+```
+
 > limpar o history -c
 
 ```
@@ -234,6 +245,40 @@ root@interno:~# history
 root@interno:~# 
 ```
 
+> history -w salva as mudanças efetuadas no history
+
+```
+root@interno:/# history -w 
+root@interno:/# 
+root@interno:/# 
+root@interno:/# history
+    1  history
+    2  history -w 
+    3  history
+root@interno:/#
+```
+
+> fc -l também é usado para ver o history  
+
+```
+root@interno:/# history -w 
+root@interno:/# 
+root@interno:/# 
+root@interno:/# history
+    1  history
+    2  history -w 
+    3  history
+root@interno:/#
+```
+
+> CTRL+R faz buscas no historico igual ao comando history  
+
+```
+(failed reverse-i-search)`texto':  
+```
+
+> Seta cima ou baixo para navegar pelos comandos  
+
 ### Comando para limpar tela do terminal
 
 > clear
@@ -242,6 +287,92 @@ root@interno:~#
 root@interno:~# clear^C
 root@interno:~# 
 ```
+
+### Comando mv
+
+> mv: movimenta e renomeia arquivos:  
+>  
+> Renomeia:  
+
+```
+root@interno:/tmp# mv doc02.txt arquivo02.txt 
+root@interno:/tmp# ls -lh
+total 24K
+-rw-r--r-- 1 root     root        0 jan 10 20:33 '[1,2]'
+-rw-r--r-- 1 root     root        0 jan 11 19:37  arquivo02.txt
+```
+
+> Movimenta  
+
+```
+root@interno:/tmp# cd /
+root@interno:/# mv /tmp/arquivo02.txt /opt/
+root@interno:/# ls /opt/
+arquivo02.txt  google  VBoxGuestAdditions-7.0.4
+root@interno:/# mv /opt/arquivo02.txt /tmp/
+```
+
+### Comando cp
+
+> cp: copia arquivos e pastas, opção -r de recursive para copiar pasta -p mantém as permissões do arquivo. cp + caminho do arquivo ou pasta a ser copiado + arquivo ou pasta destino
+
+```
+root@interno:/tmp# cp -rp /etc/passwd . (. significa a pasta em que vc se encontra atualmente)
+root@interno:/tmp# ls -lh
+total 28K
+-rw-r--r-- 1 root     root        0 jan 10 20:33 '[1,2]'
+-rw-r--r-- 1 root     root        0 jan 11 19:37  arquivo02.txt
+srwxrwxrwx 1 analista analista    0 jan  9 20:43  dbus-EevGmrHoJr
+drwxr-xr-x 9 root     root     4,0K jan 10 19:20  log
+-rw-r--r-- 1 root     root     2,1K dez 19 19:41  passwd
+```
+
+> Também é possivel copiar o arquivo mudando o seu nome:  
+
+```
+root@interno:/tmp# 
+root@interno:/tmp# cp arquivo02.txt arquivo01.txt
+root@interno:/tmp# ls
+arquivo01.txt
+arquivo02.txt
+```
+
+### Arquivos de Ajuda
+
+> man : manual do linux, comando man +nome do comando a ser pesquisado
+
+```
+root@interno:/# man cp
+root@interno:/#
+
+> help : traz lista de comandos
+
+```
+root@interno:/# help
+GNU bash, versão 5.1.4(1)-release (x86_64-pc-linux-gnu)
+Esses comandos shell são definidos internamente. Digite `help' para ver essa
+lista. Digite `help NOME' para descobrir mais sobre a função `NOME'.
+```
+
+> help cd : traz uma ajuda resumida do comando solicitado  
+
+```
+root@interno:/# help cd
+cd: cd [-L|[-P [-e]] [-@]] [DIR]
+    Altera o diretório de trabalho do shell.
+    
+    Altera o diretório atual para DIR, sendo o padrão de DIR o mesmo valor
+    da variável HOME.      
+```
+
+> info : outro arquivo de ajuda sobre o linux, comando info + comando a ser pesquisado
+
+```
+root@interno:/# info ls
+root@interno:/# 
+```
+
+
 
 
 
