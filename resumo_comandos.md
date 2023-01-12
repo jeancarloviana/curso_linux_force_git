@@ -344,6 +344,7 @@ arquivo02.txt
 ```
 root@interno:/# man cp
 root@interno:/#
+```
 
 > help : traz lista de comandos
 
