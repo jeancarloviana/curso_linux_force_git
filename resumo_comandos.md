@@ -1,9 +1,6 @@
 ## Comando linux:
 
-
-### Mostra o nivel no sistema de arquivos:
-
->pwd - mostra o nivel na arvore de diretórios
+### pwd - mostra o nivel na arvore de diretórios
 
 ```
 jeancviana@DESKTOP-6SOQARG:~$ pwd
@@ -46,7 +43,7 @@ analista tty7     :0               seg20   47:25m 43.82s  0.27s xfce4-session
 > :0 - indica que o user logou no ambiente grafico  
 > tty7 - numero da sessão do terminal  
 
-### Tipos de usuarios:
+#### Tipos de usuarios:
 
 > usuario comum: poucos privilégios  
 > usuario root: usuario adm do sistema  
@@ -109,69 +106,69 @@ analista@debian:~$
 
 ### Comando para caminhar na arvore de diretórios:
 
-> cd + caminho do arquivo por exemplo cd /home/analista ou cd ~/analista  
+> cd [caminho do arquivo] por exemplo cd /home/analista ou cd ~/analista  
 > cd /: vai para o diretório raiz  
 > cd ~: vai para o diretório home  
 > cd .. ou cd ../../ : volta a quantidade de niveis digitados  
 > cd - : volta para o diretório anterior  
 >   
-> . caminho do diretório atual  
-> .. caminho do diretório anterior  
+>  **.** caminho do diretório atual  
+> **..** caminho do diretório anterior  
 
 ## Sistema de diretórios FHS Filesystem Hierarchy Standard:
 
-> O Filesystem Hierarchy Standard (“FHS”) é um padrão na hierarquia do sistema GNU/Linux.  
+> **O Filesystem Hierarchy Standard (“FHS”) é um padrão na hierarquia do sistema GNU/Linux.**  
 >  
-> /       :diretório raiz  
+> **/**       :diretório raiz  
 >   
-> /bin    : Este diretório contém os comandos básicos para todos os usuários (cp, mv, rm…). Esses são os comandos necessários para iniciar o sistema.  
+> **/bin**    : Este diretório contém os comandos básicos para todos os usuários (cp, mv, rm…). Esses são os comandos necessários para iniciar o sistema.  
 >   
-> /boot   :Aqui é onde os arquivos do seu carregador de boot (GRUB, por exemplo) e os kernels do Linux estão localizados.  
+> **/boot**   :Aqui é onde os arquivos do seu carregador de boot (GRUB, por exemplo) e os kernels do Linux estão localizados.  
 >   
-> /dev    :Links para periféricos físicos (CDs, discos rígidos, etc.), bem como periféricos virtuais (/dev/null, /dev/random). Observe que os dispositivos físicos são nomeados como /dev/sdXN com X sendo uma letra e N um número: /dev/sda1 representa a primeira partição (1) de seu primeiro disco rígido (a) ou /dev/sdd6 representa a sexta partição (6) de seu quarto disco rígido (d) …  
+> **/dev**    :Links para periféricos físicos (CDs, discos rígidos, etc.), bem como periféricos virtuais (/dev/null, /dev/random). Observe que os dispositivos físicos são nomeados como /dev/sdXN com X sendo uma letra e N um número: /dev/sda1 representa a primeira partição (1) de seu primeiro disco rígido (a) ou /dev/sdd6 representa a sexta partição (6) de seu quarto disco rígido (d) …  
 >   
-> /etc    :Este é o local dos arquivos globais de configuração dos programas instalado.  
+> **/etc**    :Este é o local dos arquivos globais de configuração dos programas instalado.  
 >   
-> /home   :Diretório que contém as pastas do usuário no formato /home/nome-do-usuário.  
+> **/home**   :Diretório que contém as pastas do usuário no formato /home/nome-do-usuário.  
 >   
-> /lib:   Diretório onde as bibliotecas do sistema estão instaladas.  
+> **/lib**    :Diretório onde as bibliotecas do sistema estão instaladas.  
 >   
-> /mnt    :Ponto de montagem para partições internas montadas temporariamente. As partições de discos rígidos internos geralmente são montadas aqui. Para partições externas, usaremos /media em seu lugar.  
+> **/mnt**    :Ponto de montagem para partições internas montadas temporariamente. As partições de discos rígidos internos geralmente são montadas aqui. Para partições externas, usaremos /media em seu lugar.  
 >  
-> /media  :Equivalente a /mnt, mas para mídia removível/externa.  
+> **/media**  :Equivalente a /mnt, mas para mídia removível/externa.  
 >  
-> /opt    :É reservado para instalar pacotes de aplicativos extras, baixados da Internet, como o Google Chrome.  
+> **/opt**    :É reservado para instalar pacotes de aplicativos extras, baixados da Internet, como o Google Chrome.  
 >   
-> /proc   :Sistema de arquivos virtual apresenta informações sobre processos e outras informações de sistema em uma estrutura hierárquica semelhante a arquivos, fornecendo um método mais conveniente e padronizado para acessar dinamicamente dados de processos armazenados no núcleo do que os métodos de rastreamento tradicionais ou acesso direto à memória do núcleo. (Wikipedia, 2020)  
+> **/proc**   :Sistema de arquivos virtual apresenta informações sobre processos e outras informações de sistema em uma estrutura hierárquica semelhante a arquivos, fornecendo um método mais conveniente e padronizado para acessar dinamicamente dados de processos armazenados no núcleo do que os métodos de rastreamento tradicionais ou acesso direto à memória do núcleo. (Wikipedia, 2020)  
 >   
-> /root   :Diretório do usuário root.  
+> **/root**   :Diretório do usuário root.  
 >   
-> /sbin   :Série de executáveis ​​para administradores.  
+> **/sbin**   :Série de executáveis ​​para administradores.  
 >   
-> /srv    :Dados para serviços hospedados pelo sistema. Por exemplo, conteúdo de um servidor web (HTTP) ou de um banco de dados.  
+> **/srv**    :Dados para serviços hospedados pelo sistema. Por exemplo, conteúdo de um servidor web (HTTP) ou de um banco de dados.  
 >   
-> /tmp    :Diretório de arquivos temporários, esvaziado cada vez que o sistema é iniciado.  
+> **/tmp**    :Diretório de arquivos temporários, esvaziado cada vez que o sistema é iniciado.  
 >   
-> /usr    :Pasta contendo os executáveis ​​do sistema que não são vitais para sua inicialização e seu funcionamento mínimo.  
+> **/usr**    :Pasta contendo os executáveis ​​do sistema que não são vitais para sua inicialização e seu funcionamento mínimo.  
 >   
-> /var    :Pasta com conteúdos de dados variáveis ​​do sistema, indicando seu status. Dividido em subpastas.  
+> **/var**    :Pasta com conteúdos de dados variáveis ​​do sistema, indicando seu status. Dividido em subpastas.  
 
 ### Criando arquivos vazios:
 
-> touch : cria arquivo em branco  
-> touch arquivo1: cria o arquivo em branco arquivo1 podem sem criados varios arquivos em sequencia touch arquivo1 touch arquivo2   
-> touch doc0{1..5}.txt para criar arquivos em sequência.  
+> **touch** : cria arquivo em branco  
+> **touch arquivo1**: cria o arquivo em branco arquivo1 podem sem criados varios arquivos em sequencia touch arquivo1 touch arquivo2   
+> **touch doc0{1..5}.txt** para criar arquivos em sequência.  
 
 ### Apagando diretório e arquivos:
 
-> rm - apaga arquivos  
-> rm -rf : -r forma recursiva para apagar arquivos, -f força apagar sem pedir permissão (sem chance de salvação)  
-> rm -rfd : -d apaga o diretório (sem chance de salvação)  
-> rmdir: apaga diretório mas tem que estar vazio  
+> **rm** - apaga arquivos  
+> **rm -rf** : -r forma recursiva para apagar arquivos, -f força apagar sem pedir permissão (sem chance de salvação)  
+> **rm -rfd** : -d apaga o diretório (sem chance de salvação)  
+> **rmdir**: apaga diretório mas tem que estar vazio  
 
 ### Comando History:
 
-> history: comando para visualizar histórico de comandos executados no terminal
+> **history**: comando para visualizar histórico de comandos executados no terminal
 
 ```
 root@interno:~# history
@@ -179,7 +176,7 @@ root@interno:~# history
     2  ls
     3  cd ..
 ```
-> voce pode informar o numero de linhas que quer ver no history como ocomando history + quantidade de linhas
+> voce pode informar o numero de linhas que quer ver no history como ocomando **history [quantidade de linhas]**
 
 ```
 root@interno:~# history 10
@@ -195,7 +192,7 @@ root@interno:~# history 10
    77  history 10
 root@interno:~# 
 ```
-> voce pode usar o comando grep para filtrar o comando history | grep w*
+> voce pode usar o comando grep para filtrar o comando **history | grep w***
 
 ```
 root@interno:~# history | grep apt*  
@@ -210,7 +207,7 @@ root@interno:~# history | grep apt*
 root@interno:~#   
 ```
 
-> após localizar o arquivo voce pode dar o comando ! + o numero do comando no history para refazer o comando
+> após localizar o arquivo voce pode dar o comando **! [o numero do comando no history]** para refazer o comando
 
 ```
 root@interno:~# !62
@@ -222,14 +219,14 @@ Lendo informação de estado... Pronto
 root@interno:~# 
 ```
 
-> verificar quantidades de linhas máximo no history
+> verificar quantidades de linhas máximo no history **$HISTSIZE**
 
 ```
 root@interno:~# echo $HISTSIZE
 500
 ```
 
-> echo $HISTFILE mostra o caminho do arquivo do history  
+> echo $HISTFILE mostra o caminho do arquivo do history **$HISTFILE**  
 
 ```
 root@interno:/# echo $HISTFILE
@@ -337,16 +334,105 @@ arquivo01.txt
 arquivo02.txt
 ```
 
-### Arquivos de Ajuda
+### Comandos de Ajuda:
 
-> man : manual do linux, comando man +nome do comando a ser pesquisado
+Comandos de ajuda
+
+man [comando]
+help [comando]
+info [comando] 
+[comando] --help
+
+> Locais que os manuais estão armazenados:  
+> /usr/share/man (pastas man1 a man8)  
+> /usr/local/man  
+
+### man : manual do linux, comando man +nome do comando a ser pesquisado
 
 ```
 root@interno:/# man cp
 root@interno:/#
 ```
+> man -k ou apropos: busca por determinada palavra dentro do manual
 
-> help : traz lista de comandos
+```
+root@interno:/# man -k network
+interfaces (5)       - network interface configuration for ifup and ifdown
+aseqnet (1)          - ALSA sequencer connectors over network
+avahi-autoipd (8)    - IPv4LL network address configuration daemon
+```
+> primeiro coluna o manual numero em parenteses (5)  - seção do manual
+> segunda coluna local aonde a palavra network foi encontrada
+
+
+> acessar um comando em um manual especifico
+
+```
+root@interno:/# man 5 systemd.network
+root@interno:/#
+```
+
+> man -f busca exata por comandos no manual
+
+```
+root@interno:/# man -f ls
+ls (1)               - lista conteúdo de diretórios
+root@interno:/# 
+```
+
+### comando mandb atualiza base de dados dos manuais.
+
+### whatis [comando] busca exata por comandos no manual  
+
+```
+root@interno:/# whatis ls
+ls (1)               - lista conteúdo de diretórios
+root@interno:/# 
+```
+
+### whereis [comando] : busca o local do manual do comando pesquisado, local do binario e/ou código fonte  
+
+```
+root@interno:/# whereis ls
+ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
+root@interno:/# 
+```
+
+### which [comando] : só mostra o caminho do comando executado  
+
+```
+root@interno:/usr/share/man# which ls
+/usr/bin/ls
+root@interno:/usr/share/man#
+```
+
+> outra forma de obter ajuda é nos manuais, docs, howto, faq entre outros arquivos dentro das pastas dos programas em /usr/share/doc
+
+```
+root@interno:/usr/share/doc# cd xorg
+root@interno:/usr/share/doc/xorg# ls
+asciidoc-xhtml11.css  copyright  index.html  upstream-features.html  xsf.png
+asciidoc-xhtml11.js   faq	 index.txt   upstream-features.txt   xsf.svg
+changelog.gz	      howto	 reference   xsf.css
+root@interno:/usr/share/doc/xorg# ls -lh
+total 108K
+-rw-r--r-- 1 root root 7,3K fev 15  2021 asciidoc-xhtml11.css
+-rw-r--r-- 1 root root 4,1K fev 15  2021 asciidoc-xhtml11.js
+-rw-r--r-- 1 root root  35K fev 15  2021 changelog.gz
+-rw-r--r-- 1 root root 4,9K out  9  2020 copyright
+drwxr-xr-x 2 root root 4,0K dez 19 19:30 faq
+drwxr-xr-x 2 root root 4,0K dez 19 19:30 howto
+-rw-r--r-- 1 root root 3,6K fev 15  2021 index.html
+-rw-r--r-- 1 root root 1,6K fev 15  2021 index.txt
+drwxr-xr-x 2 root root 4,0K dez 19 19:30 reference
+-rw-r--r-- 1 root root 2,0K fev 15  2021 upstream-features.html
+-rw-r--r-- 1 root root  558 fev 15  2021 upstream-features.txt
+-rw-r--r-- 1 root root  179 fev 15  2021 xsf.css
+-rw-r--r-- 1 root root 3,9K fev 15  2021 xsf.png
+-rw-r--r-- 1 root root  11K fev 15  2021 xsf.svg
+```
+
+### help : traz lista de comandos
 
 ```
 root@interno:/# help
@@ -355,7 +441,7 @@ Esses comandos shell são definidos internamente. Digite `help' para ver essa
 lista. Digite `help NOME' para descobrir mais sobre a função `NOME'.
 ```
 
-> help cd : traz uma ajuda resumida do comando solicitado  
+### help [comando] : traz uma ajuda resumida do comando solicitado  
 
 ```
 root@interno:/# help cd
