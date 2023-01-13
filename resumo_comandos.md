@@ -288,7 +288,7 @@ root@interno:~#
 ### Comando mv
 
 > **mv**: movimenta e renomeia arquivos:  
->  
+
 > Renomeia:  
 
 ```
@@ -311,7 +311,7 @@ root@interno:/# mv /opt/arquivo02.txt /tmp/
 
 ### Comando cp
 
-> **cp**: copia arquivos e pastas, opção -r de recursive para copiar pasta -p mantém as permissões do arquivo. cp + caminho do arquivo ou pasta a ser copiado + arquivo ou pasta destino
+> **cp**: copia arquivos e pastas, opção -r de recursive para copiar pasta -p mantém as permissões do arquivo. cp [caminho do arquivo ou pasta a ser copiado}  [arquivo ou pasta destino]
 
 ```
 root@interno:/tmp# cp -rp /etc/passwd . (. significa a pasta em que vc se encontra atualmente)
@@ -338,16 +338,16 @@ arquivo02.txt
 
 Comandos de ajuda  
 
-man [comando]
-help [comando]
-info [comando] 
-[comando] --help
+* **man [comando]**  
+* **help [comando]**  
+* **info [comando]**  
+* **[comando] --help**  
 
 > Locais que os manuais estão armazenados:  
 > /usr/share/man (pastas man1 a man8)  
 > /usr/local/man  
 
-### man : manual do linux, comando man +nome do comando a ser pesquisado
+### man : manual do linux, comando man [nome do comando a ser pesquisado]
 
 ```
 root@interno:/# man cp
@@ -381,7 +381,7 @@ ls (1)               - lista conteúdo de diretórios
 root@interno:/# 
 ```
 
-### comando mandb atualiza base de dados dos manuais.
+### Comando mandb atualiza base de dados dos manuais.
 
 ### whatis [comando] busca exata por comandos no manual  
 
@@ -453,7 +453,7 @@ cd: cd [-L|[-P [-e]] [-@]] [DIR]
     da variável HOME.      
 ```
 
-> info : outro arquivo de ajuda sobre o linux, comando info + comando a ser pesquisado  
+### info [comando] : outro arquivo de ajuda sobre o linux, comando info + comando a ser pesquisado  
 
 ```
 root@interno:/# info ls
