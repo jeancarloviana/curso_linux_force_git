@@ -219,21 +219,21 @@ Lendo informação de estado... Pronto
 root@interno:~# 
 ```
 
-> verificar quantidades de linhas máximo no history **$HISTSIZE**
+> **$HISTSIZE** verifica quantidades de linhas máximo no history com o comando  
 
 ```
 root@interno:~# echo $HISTSIZE
 500
 ```
 
-> echo $HISTFILE mostra o caminho do arquivo do history **$HISTFILE**  
+> **$HISTFILE** mostra o caminho do arquivo do history  
 
 ```
 root@interno:/# echo $HISTFILE
 /root/.bash_history
 ```
 
-> limpar o history -c
+> **history -c** limpa o histórico  
 
 ```
 root@interno:~# history -c
@@ -242,7 +242,7 @@ root@interno:~# history
 root@interno:~# 
 ```
 
-> history -w salva as mudanças efetuadas no history
+> **history -w** salva as mudanças efetuadas no history  
 
 ```
 root@interno:/# history -w 
@@ -255,7 +255,7 @@ root@interno:/# history
 root@interno:/#
 ```
 
-> fc -l também é usado para ver o history  
+> **fc -l** também é usado para ver o history  
 
 ```
 root@interno:/# history -w 
@@ -268,7 +268,7 @@ root@interno:/# history
 root@interno:/#
 ```
 
-> CTRL+R faz buscas no historico igual ao comando history  
+> **CTRL+R** faz buscas no historico igual ao comando history  
 
 ```
 (failed reverse-i-search)`texto':  
@@ -278,7 +278,7 @@ root@interno:/#
 
 ### Comando para limpar tela do terminal
 
-> clear
+> **clear**
 
 ```
 root@interno:~# clear
@@ -287,7 +287,7 @@ root@interno:~#
 
 ### Comando mv
 
-> mv: movimenta e renomeia arquivos:  
+> **mv**: movimenta e renomeia arquivos:  
 >  
 > Renomeia:  
 
@@ -311,7 +311,7 @@ root@interno:/# mv /opt/arquivo02.txt /tmp/
 
 ### Comando cp
 
-> cp: copia arquivos e pastas, opção -r de recursive para copiar pasta -p mantém as permissões do arquivo. cp + caminho do arquivo ou pasta a ser copiado + arquivo ou pasta destino
+> **cp**: copia arquivos e pastas, opção -r de recursive para copiar pasta -p mantém as permissões do arquivo. cp + caminho do arquivo ou pasta a ser copiado + arquivo ou pasta destino
 
 ```
 root@interno:/tmp# cp -rp /etc/passwd . (. significa a pasta em que vc se encontra atualmente)
@@ -336,7 +336,7 @@ arquivo02.txt
 
 ### Comandos de Ajuda:
 
-Comandos de ajuda
+Comandos de ajuda  
 
 man [comando]
 help [comando]
@@ -353,7 +353,7 @@ info [comando]
 root@interno:/# man cp
 root@interno:/#
 ```
-> man -k ou apropos: busca por determinada palavra dentro do manual
+> **man -k ou apropos**: busca por determinada palavra dentro do manual  
 
 ```
 root@interno:/# man -k network
@@ -361,18 +361,19 @@ interfaces (5)       - network interface configuration for ifup and ifdown
 aseqnet (1)          - ALSA sequencer connectors over network
 avahi-autoipd (8)    - IPv4LL network address configuration daemon
 ```
-> primeiro coluna o manual numero em parenteses (5)  - seção do manual
-> segunda coluna local aonde a palavra network foi encontrada
+
+> primeiro coluna o manual numero em parenteses (5)  - seção do manual  
+> segunda coluna local aonde a palavra network foi encontrada  
 
 
-> acessar um comando em um manual especifico
+> **man 5 systemd.network** para acessar um comando em um manual especifico  
 
 ```
 root@interno:/# man 5 systemd.network
 root@interno:/#
 ```
 
-> man -f busca exata por comandos no manual
+> **man -f** busca exata por comandos no manual  
 
 ```
 root@interno:/# man -f ls
@@ -406,7 +407,7 @@ root@interno:/usr/share/man# which ls
 root@interno:/usr/share/man#
 ```
 
-> outra forma de obter ajuda é nos manuais, docs, howto, faq entre outros arquivos dentro das pastas dos programas em /usr/share/doc
+> outra forma de obter ajuda é nos manuais, docs, howto, faq entre outros arquivos dentro das pastas dos programas em /usr/share/doc  
 
 ```
 root@interno:/usr/share/doc# cd xorg
@@ -452,14 +453,171 @@ cd: cd [-L|[-P [-e]] [-@]] [DIR]
     da variável HOME.      
 ```
 
-> info : outro arquivo de ajuda sobre o linux, comando info + comando a ser pesquisado
+> info : outro arquivo de ajuda sobre o linux, comando info + comando a ser pesquisado  
 
 ```
 root@interno:/# info ls
 root@interno:/# 
 ```
 
+### Entradas, saidas ok e de erro do sistema:
 
+```
+root@interno:/tmp# !129
+ls -l /dev/std*
+lrwxrwxrwx 1 root root 15 jan  9 20:42 /dev/stderr -> /proc/self/fd/2
+lrwxrwxrwx 1 root root 15 jan  9 20:42 /dev/stdin -> /proc/self/fd/0
+lrwxrwxrwx 1 root root 15 jan  9 20:42 /dev/stdout -> /proc/self/fd/1
+root@interno:/tmp# 
+```
+
+> 0 - standard input (entrada de dados)  
+> 1 - standard output (saida de dados)  
+> 2 - standard error (erro padrão)  
+
+### Comando para salvar saida de comandos em um arquivo:
+
+> Comando **>** salva a saida de um comando em um arquivos sobreescrevendo  
+> Comando **>>** salva a saida do comando sem sobreescrever o arquivo  
+>   
+> Ex.: data **>** data.txt sobrescreve os dados anterior e o comando data **>>** data.txt vai escrevendo os dados em sequência sem sobreescrever. 
+
+```
+root@interno:/tmp# date > data.txt
+root@interno:/tmp# cat data.txt
+qui 12 jan 2023 20:25:28 -03
+root@interno:/tmp# date >> data.txt
+root@interno:/tmp# cat data.txt
+qui 12 jan 2023 20:25:28 -03
+qui 12 jan 2023 20:25:38 -03
+root@interno:/tmp# date >> data.txt
+root@interno:/tmp# cat data.txt
+qui 12 jan 2023 20:25:28 -03
+qui 12 jan 2023 20:25:38 -03
+qui 12 jan 2023 20:26:39 -03
+root@interno:/tmp# 
+```
+
+> Também é possivel direcionar as saidas para arquivos diferentes.
+
+```
+root@interno:/tmp# find / -size +30M 1> saida.txt 2> erros.txt
+root@interno:/tmp# cat erros.txt
+find: ‘/proc/4534/task/4534/fd/6’: Arquivo ou diretório inexistente
+find: ‘/proc/4534/task/4534/fdinfo/6’: Arquivo ou diretório inexistente
+find: ‘/proc/4534/fd/5’: Arquivo ou diretório inexistente
+find: ‘/proc/4534/fdinfo/5’: Arquivo ou diretório inexistente
+root@interno:/tmp# 
+```
+
+> **1>** pega a saida output e manda para a saida.txt (lembra dos tipos de saida? 1 para output ok)
+> **2>** pega os erros padrão e manda para o erro.txt (lembra dos tipos de saida? 2 para erros padrão)
+
+> voce pode pegar os erros e fazer sair para o dispositivo **/dev/null** descartando a saida
+
+```
+root@interno:/tmp# find / -size +30M 1> saida.txt 2> /dev/null
+root@interno:/tmp# 
+```
+
+> voce também pode pegar todas as saidas ok e erros e direcionar para o mesmo arquivo  
+
+```
+root@interno:/tmp# find / -size +30M 1> saida.txt 2>&1
+root@interno:/tmp# cat saida.txt
+/usr/lib/firefox-esr/libxul.so
+/usr/lib/firefox-esr/browser/omni.ja
+/usr/lib/libreoffice/program/libmergedlo.so
+/usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37.57.6
+/usr/lib/x86_64-linux-gnu/libLLVM-11.so.1
+/usr/lib/thunderbird/libxul.so
+/usr/share/thunderbird/omni.ja
+/boot/initrd.img-5.10.0-20-amd64
+/home/analista/Downloads/google-chrome-stable_current_amd64.deb
+/home/analista/Downloads/google-chrome-stable_current_amd64(1).deb
+/opt/google/chrome/chrome
+/var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_binary-amd64_Packages
+/var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_source_Sources
+/var/cache/apt/archives/google-chrome-stable_109.0.5414.74-1_amd64.deb
+/var/cache/apt/pkgcache.bin
+/var/cache/apt/srcpkgcache.bin
+/proc/kcore
+find: ‘/proc/4540/task/4540/fd/6’: Arquivo ou diretório inexistente
+find: ‘/proc/4540/task/4540/fdinfo/6’: Arquivo ou diretório inexistente
+find: ‘/proc/4540/fd/5’: Arquivo ou diretório inexistente
+find: ‘/proc/4540/fdinfo/5’: Arquivo ou diretório inexistente
+root@interno:/tmp# 
+```
+
+> com o comando **xargs** e você pode aplicar mais comandos.  
+
+```
+root@interno:/tmp# find / -size +30M 2> /dev/null |xargs ls -lh
+-rw-r--r-- 1 root     root      41M dez 19 19:35  /boot/initrd.img-5.10.0-20-amd64
+-rw-r--r-- 1 analista analista  89M dez 19 19:43 '/home/analista/Downloads/google-chrome-stable_current_amd64(1).deb'
+-rw-r--r-- 1 analista analista  89M dez 19 19:43  /home/analista/Downloads/google-chrome-stable_current_amd64.deb
+-rwxr-xr-x 1 root     root     209M jan  3 22:45  /opt/google/chrome/chrome
+-r-------- 1 root     root     128T jan 12 20:49  /proc/kcore
+-rw-r--r-- 1 root     root      40M dez 13 19:48  /usr/lib/firefox-esr/browser/omni.ja
+-rw-r--r-- 1 root     root     134M dez 13 19:48  /usr/lib/firefox-esr/libxul.so
+-rw-r--r-- 1 root     root      73M set  6 13:54  /usr/lib/libreoffice/program/libmergedlo.so
+-rw-r--r-- 1 root     root     129M dez 14 13:34  /usr/lib/thunderbird/libxul.so
+-rw-r--r-- 1 root     root      81M jan  6  2021  /usr/lib/x86_64-linux-gnu/libLLVM-11.so.1
+-rw-r--r-- 1 root     root      59M dez 30 11:03  /usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.0.so.37.57.6
+-rw-r--r-- 1 root     root      73M dez 14 13:34  /usr/share/thunderbird/omni.ja
+-rw-r--r-- 1 root     root      90M jan  3 23:27  /var/cache/apt/archives/google-chrome-stable_109.0.5414.74-1_amd64.deb
+-rw-r--r-- 1 root     root      34M jan 12 19:29  /var/cache/apt/pkgcache.bin
+-rw-r--r-- 1 root     root      34M jan 12 19:29  /var/cache/apt/srcpkgcache.bin
+-rw-r--r-- 1 root     root      44M dez 17 06:48  /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_binary-amd64_Packages
+-rw-r--r-- 1 root     root      43M dez 17 06:48  /var/lib/apt/lists/deb.debian.org_debian_dists_bullseye_main_source_Sources
+root@interno:/tmp# 
+```
+
+### Cadeia de comandos:
+
+**|** : comando pipe cria uma cadeia de comandos, ele pega o resultado do comando anterior e passa para o próximo comando.
+
+```
+root@interno:/tmp# ls /etc/*.conf | sort | nl | head -n 5
+     1	/etc/adduser.conf
+     2	/etc/ca-certificates.conf
+     3	/etc/debconf.conf
+     4	/etc/deluser.conf
+     5	/etc/discover-modprobe.conf
+root@interno:/tmp# 
+```
+
+> Comandos usados no exemplo do **|**
+
+> comando **sort** : ordena o resultado do comando  
+
+```
+root@interno:/tmp# ls /etc/*.conf | sort
+/etc/adduser.conf
+/etc/ca-certificates.conf
+/etc/debconf.conf
+/etc/deluser.conf
+```
+
+> comando **nl** : numera as linhas  
+
+```
+root@interno:/tmp# ls /etc/*.conf | sort | nl
+     1	/etc/adduser.conf
+     2	/etc/ca-certificates.conf
+     3	/etc/debconf.conf
+```
+
+> comando **head -n 5**: mostra apenas a quantidade de linhas solicitadas
+
+```
+root@interno:/tmp# ls /etc/*.conf | sort | nl | head -n 5
+     1	/etc/adduser.conf
+     2	/etc/ca-certificates.conf
+     3	/etc/debconf.conf
+     4	/etc/deluser.conf
+     5	/etc/discover-modprobe.conf
+```
 
 
 
