@@ -274,7 +274,7 @@ root@interno:/#
 (failed reverse-i-search)`texto':  
 ```
 
-> Seta cima ou baixo para navegar pelos comandos  
+> **Seta cima ou baixo para navegar pelos comandos**  
 
 ### Comando para limpar tela do terminal
 
