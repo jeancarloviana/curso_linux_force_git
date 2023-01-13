@@ -342,6 +342,17 @@ Comandos de ajuda
 * **help [comando]**  
 * **info [comando]**  
 * **[comando] --help**  
+* **help**
+
+Comandos que auxiliam a pesquisa de ajuda:
+
+* **which [comando]**
+* **whereis [comando]**
+* **whatis [comando]**
+
+Comando para atualizar manuais:
+
+* **mandb**
 
 > Locais que os manuais estão armazenados:  
 > /usr/share/man (pastas man1 a man8)  
@@ -364,7 +375,6 @@ avahi-autoipd (8)    - IPv4LL network address configuration daemon
 
 > primeiro coluna o manual numero em parenteses (5)  - seção do manual  
 > segunda coluna local aonde a palavra network foi encontrada  
-
 
 > **man 5 systemd.network** para acessar um comando em um manual especifico  
 
@@ -498,7 +508,7 @@ qui 12 jan 2023 20:26:39 -03
 root@interno:/tmp# 
 ```
 
-> Também é possivel direcionar as saidas para arquivos diferentes.
+> Também é possivel direcionar as saidas para arquivos diferentes.  
 
 ```
 root@interno:/tmp# find / -size +30M 1> saida.txt 2> erros.txt
@@ -510,10 +520,10 @@ find: ‘/proc/4534/fdinfo/5’: Arquivo ou diretório inexistente
 root@interno:/tmp# 
 ```
 
-> **1>** pega a saida output e manda para a saida.txt (lembra dos tipos de saida? 1 para output ok)
-> **2>** pega os erros padrão e manda para o erro.txt (lembra dos tipos de saida? 2 para erros padrão)
+> **1>** pega a saida output e manda para a saida.txt (lembra dos tipos de saida? 1 para output ok)  
+> **2>** pega os erros padrão e manda para o erro.txt (lembra dos tipos de saida? 2 para erros padrão)  
 
-> voce pode pegar os erros e fazer sair para o dispositivo **/dev/null** descartando a saida
+> voce pode pegar os erros e fazer sair para o dispositivo **/dev/null** descartando a saida  
 
 ```
 root@interno:/tmp# find / -size +30M 1> saida.txt 2> /dev/null
